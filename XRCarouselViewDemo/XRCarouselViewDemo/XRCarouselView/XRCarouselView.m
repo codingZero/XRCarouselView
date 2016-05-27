@@ -199,6 +199,7 @@
         self.scrollView.contentSize = CGSizeZero;
         self.scrollView.contentOffset = CGPointZero;
         self.currImageView.frame = CGRectMake(0, 0, self.width, self.height);
+        [self stopTimer];
     }
 }
 
@@ -361,6 +362,7 @@
 
 #pragma mark- --------UIScrollViewDelegate--------
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (CGSizeEqualToSize(CGSizeZero, scrollView.contentSize)) return;
     CGFloat offsetX = scrollView.contentOffset.x;
     [self changeCurrentPageWithOffset:offsetX];
     if (offsetX < self.width * 2) {//right
