@@ -98,6 +98,15 @@ UIImage *gifImageNamed(NSString *imageName);
  */
 @property (nonatomic, strong) NSArray *imageArray;
 
+/**
+ *  轮播的图片的占位图名称
+ *  默认值为 `XRPlaceholder`
+ *  如果使用默认值,必须包含 `XRPlaceholder.png`,否则程序 crash
+ *  如果修改默认图,在 init 后设置此属性即可.
+ *  
+ */
+@property (nonatomic, strong) NSString *placeHolderImageName;
+
 
 /**
  *  图片描述的字符串数组，应与图片顺序对应

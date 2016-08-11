@@ -71,6 +71,8 @@ static NSString *cache;
     [self addSubview:self.scrollView];
     [self addSubview:self.describeLabel];
     [self addSubview:self.pageControl];
+
+    self.placeHolderImageName = @"XRPlaceholder";
 }
 
 #pragma mark- frame相关
@@ -154,7 +156,7 @@ static NSString *cache;
             [_images addObject:imageArray[i]];
         } else if ([imageArray[i] isKindOfClass:[NSString class]]){
             //如果是网络图片，则先添加占位图片，下载完成后替换
-            [_images addObject:[UIImage imageNamed:@"XRPlaceholder"]];
+            [_images addObject:[UIImage imageNamed:self.placeHolderImageName]];
             [self downloadImages:i];
         }
     }

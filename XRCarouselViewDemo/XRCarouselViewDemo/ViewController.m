@@ -8,6 +8,9 @@
 
 #import "ViewController.h"
 #import "XRCarouselView.h"
+
+#define changeDefaultImagePlaceHoder 0
+
 @interface ViewController ()<XRCarouselViewDelegate>
 @property (nonatomic, strong) XRCarouselView *carouselView;
 @property (weak, nonatomic) IBOutlet XRCarouselView *carouselView1;
@@ -33,7 +36,9 @@
      *  通过代码创建
      */
     self.carouselView = [[XRCarouselView alloc] initWithFrame:CGRectMake(0, 100, [UIScreen mainScreen].bounds.size.width, 180)];
-    
+#if changeDefaultImagePlaceHoder
+    self.carouselView.placeHolderImageName = @"1.png";
+#endif
     
     //设置图片及描述数组
     _carouselView.imageArray = arr;
