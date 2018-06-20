@@ -117,6 +117,7 @@ static NSString *cache;
 - (NSOperationQueue *)queue {
     if (!_queue) {
         _queue = [[NSOperationQueue alloc] init];
+        [_queue setMaxConcurrentOperationCount:1];
     }
     return _queue;
 }
